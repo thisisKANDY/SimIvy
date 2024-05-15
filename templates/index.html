@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIM IVY</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Google Fonts for Futuristic Style -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Inline styles */
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;  /* Vertical center */
+            justify-content: center; /* Horizontal center */
+            height: 100vh;  /* Full viewport height */
+            margin: 0;  /* Reset default margin */
+        }
+
+        .chatbot-card {
+            background-color: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
+            border: 2px solid white;
+            width: 100%;  /* Take full width of its container */
+            max-width: 600px;  /* Set a maximum width */
+        }
+
+        .btn-light {
+            background-color: white;
+            color: black;
+        }
+
+        h2 {
+            font-weight: 700;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chatbot-card">
+        <div class="card-header bg-white text-center">
+            <h2>SIM IVY</h2>
+        </div>
+        <div class="card-body">
+            <form action="/send_message" method="POST">
+                <div class="form-group">
+                    <label for="human_input">Enter your message:</label>
+                    <textarea class="form-control" id="human_input" name="human_input" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-light btn-block">Send</button>
+            </form>
+            <div id="chatbox">
+                {% if human_message %}
+                <div class="human-message"><strong>You:</strong> {{ human_message }}</div>
+                <div class="ai-message"><strong>SIM IVY:</strong> {{ ai_message }}</div>
+                {% endif %}
+            </div>
+            {% if audio_base64 %}
+            <audio controls>
+                <source src="{{ audio_base64 }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

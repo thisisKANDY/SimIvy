@@ -1,0 +1,7 @@
+Flask==3.0.3
+requests==2.31.0
+python-dotenv==1.0.1
+langchain_openai==0.1.6
+langchain==0.1.16
+langchain-google-community==1.0.3
+emoji==2.10.1

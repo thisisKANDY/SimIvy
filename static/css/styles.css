@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    background-color: #000; /* Pure black background */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+.container {
+    background-color: #fff; /* White background for the chatbox */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* A subtle shadow */
+    width: 500px; /* Width of the chatbox */
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em; /* Bigger font size */
+    font-weight: bold; /* Bold font weight */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+input[type="text"], button {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside the elements */
+    margin-top: 10px; /* Space above the elements */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+input[type="text"] {
+    font-size: 1.2em; /* Slightly larger font size */
+}
+
+button {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text */
+    cursor: pointer; /* Hand cursor on hover */
+    font-size: 1.2em; /* Slightly larger font size */
+}
+
+button:hover {
+    background-color: #555; /* Slightly lighter color on hover */
+}
