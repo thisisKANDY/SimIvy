@@ -61,7 +61,6 @@ template = """
 
     If you don't have an answer based on your internal knowledge, fetch and summarize information from the web, but always maintain your character.
 
-
     {history}
     Human: {human_input}
     Simone:
@@ -113,7 +112,7 @@ def get_response_from_ai(human_input):
         "not within my programming", "I suggest seeking guidance", "I do not have the capability",
         "trivial matter"
     ]
-    if any(phrase.lower() in response.lower() for phrase in unsatisfactory_phrases):
+    if any(phrase.lower() in response.lower()) for phrase in unsatisfactory_phrases):
         print(f"Fetching web data for input: {human_input}")  # Debugging output
         web_data = google_search.run(human_input)
         web_summary = summarize_web_data(web_data)
@@ -198,4 +197,5 @@ def summarize_web_data(web_data):
     return processed_summary.strip()
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
