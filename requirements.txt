@@ -5,3 +5,5 @@ langchain_openai==0.1.6
 langchain==0.1.16
 langchain-google-community==1.0.3
 emoji==2.10.1
+vaderSentiment
+nltk
