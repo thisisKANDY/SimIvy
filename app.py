@@ -112,7 +112,7 @@ def get_response_from_ai(human_input):
         "not within my programming", "I suggest seeking guidance", "I do not have the capability",
         "trivial matter"
     ]
-    if any(phrase.lower() in response.lower()) for phrase in unsatisfactory_phrases):
+    if any(phrase.lower() in response.lower() for phrase in unsatisfactory_phrases):
         print(f"Fetching web data for input: {human_input}")  # Debugging output
         web_data = google_search.run(human_input)
         web_summary = summarize_web_data(web_data)
